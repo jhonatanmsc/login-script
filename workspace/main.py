@@ -7,6 +7,7 @@ def main():
 
     while True:
         user = User.get_instance()
+        print(user)
         try:
             if user:
                 titulo = '<<        usuario: '+user.login+'      >>'

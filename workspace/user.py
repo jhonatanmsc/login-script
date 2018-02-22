@@ -1,19 +1,22 @@
 
 class User:
 
-	instance = None
+    instance = None
 
-	def __init__(self, login, senha):
-		self.login = login
-		self.senha = senha
+    def __init__(self, login, password):
+        self.login = login
+        self.password = password
 
-	def get_instance(login=None, senha=None):
-		if not instance:
-			if login and senha:
-				instance = User(login=login, senha=senha)
+    def get_instance(login=None, password=None):
+        if not User.instance:
+            if login and password:
+                User.instance = User(login=login, password=password)
+                return User.instance
+            else:
+                return False
+        else:
+            return User.instance
 
-		return instance
-
-	def __str__(self):
-		json = {"login":self.login,"senha":self.senha}
-		return json
+    def __str__(self):
+        json = {"login":self.login,"password":self.password}
+        return json

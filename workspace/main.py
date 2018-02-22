@@ -1,23 +1,24 @@
 # Auth: jhonatanmsc
-# v 1.0
+# v 1.2
+from os import system
 from user import User
 from log import Log
+
+def limpar():
+    system('cls')
 
 def main():
 
     while True:
         user = User.get_instance()
-        print(user)
+        limpar()
         try:
-            if user:
-                titulo = '<<        usuario: '+user.login+'      >>'
-
-            else:
-                titulo = '<<        LoGin ScRiPt      >>'
+        
+            titulo = '<<        LoGin ScRiPt | versão 1.2        >>'
             
             print(titulo)
             login = input("Digite seu login: ")
-            passwd = input("Digite sua senha: \n")
+            passwd = input("Digite sua senha: ")
             User.get_instance(login, passwd)
             Log.check_host()
 

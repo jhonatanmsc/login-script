@@ -1,5 +1,5 @@
 beautifulsoup4==4.4.1
-cryptography==1.2.3
+cryptography==3.2
 httplib2==0.9.1
 pycurl==7.43.0
 requests==2.9.1
